@@ -14,6 +14,7 @@ function App() {
     console.log(bro);
   };
 
+  console.log("What u are u doing")
   return (
     <>
       {bro.length ||bro.map((e, i) => {
