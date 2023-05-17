@@ -3,6 +3,7 @@ import "./App.css";
 
 function App() {
   const team = [1,2,3,4]
+  const sultan =["sultan","loves"]
   useEffect(() => {
     add();
   }, []);
