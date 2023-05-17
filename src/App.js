@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import "./App.css";
 
 function App() {
+  const team = [1,2,3,4]
+  useEffect(() => {
+    add();
+  }, []);
+  const [bro, setbro] = useState([]);
+  const [newText, setnewText] = useState("");
+  const add = () => {
+    bro.push(newText);
+    console.log(bro);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {bro.length ||bro.map((e, i) => {
+        return (
+          <>
+            <ul>
+              <li>{e}</li>
+            </ul>
+          </>
+        );
+      })}
+      <>
+        <input onChange={(e) => setnewText(e.target.value)}></input>
+        <button onClick={() => add()}>add</button>
+      </>
+    </>
   );
 }
 
